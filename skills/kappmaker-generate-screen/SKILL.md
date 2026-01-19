@@ -19,37 +19,11 @@ This skill automates the creation of a new screen, ensuring architectural consis
 
 ## Templates
 
-### {{ScreenName}}Screen.kt
-```kotlin
-package {{package_name}}.presentation.screens.{{screen_name_lowercase}}
+The full template code is available in the [reference.md](reference.md) file.
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+## Examples
 
-@Composable
-fun {{ScreenName}}Screen(
-    viewModel: {{ScreenName}}UiStateHolder = viewModel()
-) {
-    val uiState by viewModel.uiState.collectAsState()
-    // UI Implementation
-}
-```
-
-### {{ScreenName}}UiStateHolder.kt
-```kotlin
-package {{package_name}}.presentation.screens.{{screen_name_lowercase}}
-
-import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-
-class {{ScreenName}}UiStateHolder : ViewModel() {
-    private val _uiState = MutableStateFlow({{ScreenName}}UiState())
-    val uiState: StateFlow<{{ScreenName}}UiState> = _uiState
-}
-```
+See the [examples.md](examples.md) file for concrete usage scenarios.
 
 ## Post-Generation
 Remind the user to update the Dependency Injection (DI) setup in `AppInitializer` by including `factoryOf(::{{ScreenName}}UiStateHolder)`.
