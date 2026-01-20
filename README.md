@@ -1,36 +1,40 @@
 # ClaudeSkills Repository
 
-This repository is a collection of specialized Claude Code Skills and Agent configurations designed to streamline development tasks. The structure is designed to be modular, allowing for easy integration of new skills and agents.
+This repository is a collection of specialized Claude Code Skills and Agent configurations designed to streamline development tasks. It strictly follows the [AgentSkills Specification](https://agentskills.io/specification) for modularity and progressive disclosure.
 
 ## Structure
 
-The repository follows a standard structure for Claude Code projects:
+The repository is organized by platform and follows the AgentSkills directory structure:
 
 ```
 ClaudeSkills/
 ├── README.md
 ├── skills/
-│   ├── atopile/            # All Atopile-specific skills
-│   │   ├── atopile-create-project/
-│   │   └── ...
-│   └── kappmaker/          # All KAppMaker-specific skills
-│       ├── kappmaker-generate-screen/
-│       └── ...
+│   ├── atopile/            # Atopile-specific skills
+│   │   └── skills/
+│   │       ├── atopile-create-project/
+│   │       │   ├── skill.md
+│   │       │   └── references/
+│   │       │       └── REFERENCE.md
+│   │       └── ...
+│   └── kappmaker/          # KAppMaker-specific skills
+│       └── skills/
+│           ├── kappmaker-generate-screen/
+│           │   ├── skill.md
+│           │   └── references/
+│           │       └── REFERENCE.md
+│           └── ...
 └── agents/                 # Placeholder for custom Agent configurations
-    └── ...
 ```
 
 ## Skills
 
-Skills are organized by the platform or domain they target. Each skill follows the multi-file structure for optimal performance and progressive disclosure:
-
-*   `SKILL.md`: High-level overview and triggers.
-*   `reference.md`: Detailed API, configuration, and code templates.
-*   `examples.md`: Concrete usage scenarios.
+Each skill is designed for **Progressive Disclosure**:
+1.  **Metadata**: Name and description are loaded at startup.
+2.  **Instructions**: The full `skill.md` is loaded when the skill is activated.
+3.  **Resources**: Detailed technical references in `references/REFERENCE.md` are loaded only when required.
 
 ### Atopile Skills
-
-These skills assist in electronic circuit design using the Atopile language and compiler.
 
 | Skill Name | Purpose |
 | :--- | :--- |
@@ -46,8 +50,6 @@ These skills assist in electronic circuit design using the Atopile language and 
 | `atopile-publish-package` | Explains how to publish packages to the Atopile registry. |
 
 ### KAppMaker Skills
-
-These skills automate boilerplate and configuration for the KAppMaker multiplatform framework.
 
 | Skill Name | Purpose |
 | :--- | :--- |
@@ -67,10 +69,6 @@ These skills automate boilerplate and configuration for the KAppMaker multiplatf
 | `kappmaker-trigger-review` | Triggers the in-app review/rating prompt. |
 | `kappmaker-setup-admob` | Configures Google AdMob Ads (Banner, Interstitial, Rewarded). |
 
-## Agents
-
-This directory is a placeholder for any custom Claude Agent configurations you may wish to add (e.g., a specialized "Git Agent" or "Security Agent").
-
 ## Usage
 
 To use these skills in your project:
@@ -78,3 +76,7 @@ To use these skills in your project:
 1.  Clone this repository.
 2.  Copy the contents of the `skills/` directory into the `.claude/skills/` folder of your target project.
 3.  Claude Code will automatically discover and use these skills when you describe a task that matches a skill's trigger.
+
+## Compliance
+
+This repository is compliant with the [AgentSkills Specification v1.0](https://agentskills.io/specification).
