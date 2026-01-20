@@ -10,6 +10,9 @@ The repository follows a standard structure for Claude Code projects:
 ClaudeSkills/
 ├── README.md
 ├── skills/
+│   ├── atopile/            # All Atopile-specific skills
+│   │   ├── atopile-create-project/
+│   │   └── ...
 │   └── kappmaker/          # All KAppMaker-specific skills
 │       ├── kappmaker-generate-screen/
 │       └── ...
@@ -39,6 +42,8 @@ These skills assist in electronic circuit design using the Atopile language and 
 | `atopile-layout-sync` | Synchronizes the design with the KiCAD layout. |
 | `atopile-use-traits` | Applies traits for bridging or sharing references. |
 | `atopile-install-cli` | Guides the installation of the Atopile CLI. |
+| `atopile-save-work` | Guides on saving work and using Git with Atopile. |
+| `atopile-publish-package` | Explains how to publish packages to the Atopile registry. |
 
 ### KAppMaker Skills
 
