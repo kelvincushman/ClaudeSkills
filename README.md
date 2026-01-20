@@ -25,6 +25,21 @@ Skills are organized by the platform or domain they target. Each skill follows t
 *   `reference.md`: Detailed API, configuration, and code templates.
 *   `examples.md`: Concrete usage scenarios.
 
+### Atopile Skills
+
+These skills assist in electronic circuit design using the Atopile language and compiler.
+
+| Skill Name | Purpose |
+| :--- | :--- |
+| `atopile-create-project` | Creates a new Atopile project from the template. |
+| `atopile-add-component` | Adds a component (auto-pick or specific part) to the project. |
+| `atopile-manage-packages` | Manages package dependencies (`add`, `remove`, `sync`). |
+| `atopile-build-project` | Compiles the project and updates the PCB layout. |
+| `atopile-define-module` | Defines modules, interfaces, and constraints in `.ato`. |
+| `atopile-layout-sync` | Synchronizes the design with the KiCAD layout. |
+| `atopile-use-traits` | Applies traits for bridging or sharing references. |
+| `atopile-install-cli` | Guides the installation of the Atopile CLI. |
+
 ### KAppMaker Skills
 
 These skills automate boilerplate and configuration for the KAppMaker multiplatform framework.
