@@ -1,38 +1,26 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-manage-packages
-description: Manages package dependencies in an Atopile project. Use when the user wants to "install a package", "remove a dependency", or "sync packages".
----
+description: Manages Atopile package dependencies. Use when adding new libraries, removing unused packages, or synchronizing the local environment with the registry.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
 # Atopile Package Management
 
-This skill uses the `ato` CLI to manage project dependencies listed in `ato.yaml`.
+This skill guides you through managing external dependencies in your Atopile project.
 
-## Commands
+## Basic Commands
 
-| Command | Purpose |
-| :---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0" | :--- |
-| `ato add {package}` | Adds a new package dependency (e.g., `atopile/ti-ads1115`). |
-| `ato remove {package}` | Removes a package dependency. |
-| `ato sync` | Installs all dependencies listed in `ato.yaml`. |
+- **Add**: `ato install <package_name>`
+- **Remove**: `ato uninstall <package_name>`
+- **Sync**: `ato install` (installs all packages listed in `ato.yaml`)
 
-## Usage Example
+## Package Storage
+Dependencies are installed into the `.ato/modules/` directory. This directory should typically be ignored by Git.
 
-```bash
-ato add atopile/ti-ads1115
-```
+## Progressive Disclosure
 
-## Reference
-
-See [reference guide](references/REFERENCE.md)(reference.md) for information on development dependencies (git, local files).
+- See [technical reference](references/REFERENCE.md) for `ato.yaml` dependency syntax and registry details.
+- See [usage examples](examples/examples.md) for common package management workflows.

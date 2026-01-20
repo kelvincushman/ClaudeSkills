@@ -1,38 +1,28 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-add-component
-description: Adds a component to an Atopile project, either by auto-picking passive components or by fetching a specific part. Use when the user wants to "add a resistor", "add a capacitor", or "fetch a specific part".
----
+description: Adds physical components to an Atopile project. Use when selecting specific parts, assigning LCSC IDs, or defining footprints and packages.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
 # Atopile Component Addition
 
-This skill helps in adding components to the `.ato` source file.
+This skill guides you through adding physical components to your design, either by automatic selection or by specifying exact part numbers.
 
-## 1. Auto-Pick Passive Components
+## Basic Usage
 
-For passive components (resistors, capacitors, inductors), define the requirements in the `.ato` file:
+Components are added by instantiating a `component` type and configuring its attributes.
 
-```atopile
-resistor = new Resistor
-resistor.resistance = 10kohm +/- 5%
-resistor.package = "0402"
+```ato
+import Resistor
+my_res = new Resistor
+my_res.package = "0603"
+my_res.resistance = 1kohm +/- 1%
 ```
 
-## 2. Add Specific Component
+## Progressive Disclosure
 
-Use the CLI tool to fetch a part and add its pinout, footprint, and 3D model to the project:
-
-```bash
-ato create part
-```
-
-## Reference
-
-See [reference guide](references/REFERENCE.md)(reference.md) for details on creating custom parts and using the package registry.
+- See [technical reference](references/REFERENCE.md) for global attributes like `lcsc_id`, `mpn`, and `package`.
+- See [usage examples](examples/examples.md) for specific part assignment and footprint configuration.

@@ -1,20 +1,9 @@
-# Atopile Layout Synchronization Reference
+# Atopile Layout Reference
 
-## Reusing Package Layouts
+## KiCAD Plugin
+The plugin is automatically installed when you run `ato`. If missing, run `ato configure` to re-trigger installation.
 
-To reuse a layout from an imported package (e.g., `rp2040`):
-
-1.  Ensure the package's module (e.g., `RP2040Kit`) is instantiated in your code.
-2.  Run `ato build`.
-3.  In KiCAD, use the **Atopile KiCAD plugin** to:
-    *   Hit the "Sync Group" button.
-    *   Select the group to sync.
-    *   Hit the "Pull" (Down arrow) button to pull the layout from the module's KiCAD file.
-
-## Creating Reusable Layouts
-
-To create a reusable layout for your own module:
-
-1.  Add a new build configuration with `ato create build`.
-2.  Point the newly created entry at the module you want to have a reusable layout.
-3.  Lay out the module in KiCAD. The layout will be saved and associated with that module.
+## Layout Reuse Rules
+- Layouts are mapped to **classes or super-classes** that have a build target.
+- To create a reusable layout, add a build config with `ato create build` and point it at your module.
+- The "Pull" (Down arrow) button in the plugin pulls layout data from the module's KiCAD file.

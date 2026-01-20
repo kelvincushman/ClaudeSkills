@@ -1,33 +1,29 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-install-cli
-description: Guides the user through installing the Atopile CLI and setting up the development environment. Use when the user wants to "install atopile", "set up development environment", or "install ato cli".
----
+description: Guides the installation and configuration of the Atopile CLI tool. Use when setting up a new development environment or troubleshooting CLI issues.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
 # Atopile CLI Installation
 
-This skill guides the installation of the Atopile Command Line Interface (`ato`).
+This skill provides instructions for installing the `ato` command-line tool.
 
-## Recommended Installation
+## Installation Command
 
-The recommended method is to use the **VSCode/Cursor extension**, which prompts for an automatic CLI installation.
+```bash
+pip install atopile
+```
 
-## Prerequisites
+## Verification
+After installation, verify by running:
+```bash
+ato --version
+```
 
-1.  Install [VSCode](https://code.visualstudio.com/) or [Cursor](https://www.cursor.com/).
-2.  Install the [atopile VSCode/Cursor extension](https://marketplace.visualstudio.com/items?itemName=atopile.atopile).
+## Progressive Disclosure
 
-## Advanced Installation
-
-For advanced setups, refer to the official documentation's installation guide.
-
-## Reference
-
-See [reference guide](references/REFERENCE.md)(reference.md) for details on setting up an editable Atopile install.
+- See [technical reference](references/REFERENCE.md) for system requirements and troubleshooting.
+- See [usage examples](examples/examples.md) for first-time configuration.

@@ -14,8 +14,10 @@ ClaudeSkills/
 │   │   └── skills/
 │   │       ├── atopile-create-project/
 │   │       │   ├── skill.md
-│   │       │   └── references/
-│   │       │       └── REFERENCE.md
+│   │       │   ├── references/
+│   │       │   │   └── REFERENCE.md
+│   │       │   └── examples/
+│   │       │       └── examples.md
 │   │       └── ...
 │   └── kappmaker/          # KAppMaker-specific skills
 │       └── skills/
@@ -32,20 +34,21 @@ ClaudeSkills/
 Each skill is designed for **Progressive Disclosure**:
 1.  **Metadata**: Name and description are loaded at startup.
 2.  **Instructions**: The full `skill.md` is loaded when the skill is activated.
-3.  **Resources**: Detailed technical references in `references/REFERENCE.md` are loaded only when required.
+3.  **Resources**: Detailed technical references in `references/REFERENCE.md` and `examples/examples.md` are loaded only when required.
 
-### Atopile Skills
+### Atopile Skills (Exhaustive Set)
 
 | Skill Name | Purpose |
 | :--- | :--- |
-| `atopile-create-project` | Creates a new Atopile project from the template. |
-| `atopile-add-component` | Adds a component (auto-pick or specific part) to the project. |
-| `atopile-manage-packages` | Manages package dependencies (`add`, `remove`, `sync`). |
-| `atopile-build-project` | Compiles the project and updates the PCB layout. |
-| `atopile-define-module` | Defines modules, interfaces, and constraints in `.ato`. |
+| `atopile-create-project` | Initializes a new Atopile project from a template. |
+| `atopile-add-component` | Adds physical components, assigns LCSC IDs, and defines footprints. |
+| `atopile-manage-packages` | Manages dependencies (`install`, `uninstall`, `sync`). |
+| `atopile-build-project` | Compiles the project and generates manufacturing data. |
+| `atopile-define-module` | Defines modules, components, and interfaces in `.ato`. |
 | `atopile-layout-sync` | Synchronizes the design with the KiCAD layout. |
-| `atopile-use-traits` | Applies traits for bridging or sharing references. |
-| `atopile-install-cli` | Guides the installation of the Atopile CLI. |
+| `atopile-use-traits` | Applies advanced traits like bridging and shared references. |
+| `atopile-use-assertions` | Uses mathematical constraints to validate designs and solve values. |
+| `atopile-install-cli` | Guides the installation and configuration of the Atopile CLI. |
 | `atopile-save-work` | Guides on saving work and using Git with Atopile. |
 | `atopile-publish-package` | Explains how to publish packages to the Atopile registry. |
 

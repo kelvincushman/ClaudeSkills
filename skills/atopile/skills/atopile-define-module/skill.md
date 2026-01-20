@@ -1,48 +1,35 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-define-module
-description: Defines a new module or component in the Atopile language, including interfaces, connections, and constraints. Use when the user wants to "create a new module", "define a voltage divider", or "subclass a component".
----
+description: Defines modules, components, and interfaces in the .ato language. Use when creating new circuit blocks, defining component properties, or structuring the design hierarchy.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
 # Atopile Module Definition
 
-This skill guides the creation of new `module` or `component` blocks in the `.ato` language.
+This skill guides you through defining the core building blocks of an Atopile design: modules, components, and interfaces.
 
 ## Core Concepts
 
-*   **Types**: `module`, `interface`, `component`.
-*   **Subclassing**: `module SubclassedModule from SomeModule:`
-*   **Connections**: Use the `~` operator (e.g., `signal_a ~ signal_b`).
-*   **Constraints**: Use the `assert` keyword (e.g., `assert v_out is v_in * ratio`).
+- **Module**: A reusable block of circuitry (like a class).
+- **Component**: A specialized module representing a physical part.
+- **Interface**: A collection of electrical signals (e.g., I2C, Power).
 
-## Example: Voltage Divider
+## Basic Syntax
 
-```atopile
-module VoltageDivider:
-    # External interfaces
-    power = new ElectricPower
-    output = new ElectricSignal
-
-    # Components
-    r_bottom = new Resistor
-    r_top = new Resistor
-
-    # Connections
-    power.hv ~ r_top.p1; r_top.p2 ~ output.line
-    output.line ~ r_bottom.p1; r_bottom.p2 ~ power.lv
-
-    # Constraints
-    assert power.voltage is 10V +/- 1%
-    assert output.reference.voltage within 3.3V +/- 10%
+```ato
+module MyModule:
+    signal_a = new ElectricSignal
+    gnd = new Electrical
+    
+component MyResistor from Resistor:
+    package = "0402"
+    resistance = 10kohm +/- 1%
 ```
 
-## Reference
+## Progressive Disclosure
 
-See [reference guide](references/REFERENCE.md)(reference.md) for details on units, tolerances, and the `->` specialization operator.
+- See [technical reference](references/REFERENCE.md) for advanced syntax, inheritance, and built-in types.
+- See [usage examples](examples/examples.md) for common module patterns.

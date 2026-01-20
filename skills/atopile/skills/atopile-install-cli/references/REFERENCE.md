@@ -1,18 +1,10 @@
-# Atopile CLI Installation Reference
+# Atopile Installation Reference
 
-## Editable Atopile Install
+## System Requirements
+- **Python**: 3.9 or newer.
+- **KiCAD**: 7.0 or newer (for layout features).
+- **OS**: Windows, macOS, or Linux.
 
-For developers who want to contribute to Atopile or use the latest development version:
-
-1.  Clone the repository: `git clone https://github.com/atopile/atopile`
-2.  Install in editable mode: `pip install -e .`
-
-## Dev Tools
-
-*   **Cursor**: Recommended for its AI capabilities.
-*   **VSCode**: Supported with high-quality extensions.
-*   **Atopile Extension**: Provides syntax highlighting and CLI integration.
-
-## Debugging
-
-Use the `--debug` flag with any `ato` command to start a `debugpy` server on port `5678`.
+## Troubleshooting
+- **Command not found**: Ensure your Python scripts directory is in your PATH.
+- **KiCAD Plugin missing**: Run `ato configure` to re-install the plugin.

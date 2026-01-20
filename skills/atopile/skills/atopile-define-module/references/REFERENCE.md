@@ -1,30 +1,19 @@
-# Atopile Module Definition Reference
+# Atopile Language Reference
+
+## Built-in Types
+- `Electrical`: A single electrical node.
+- `ElectricSignal`: A signal with a reference (usually GND).
+- `ElectricPower`: A power interface with `hv` and `lv`.
+
+## Inheritance
+Modules can inherit from other modules using the `from` keyword.
+```ato
+module SubModule from BaseModule:
+    # Override or add properties
+```
 
 ## Units and Tolerances
-
-Atopile supports units and tolerances to define physical attributes:
-
-| Format | Example | Description |
-| :--- | :--- | :--- |
-| **Unit** | `1.23ohm`, `23.4uF`, `10V` | Defines the physical quantity. |
-| **Range** | `1V to 2V` | Defines a range for a value. |
-| **Tolerance** | `3uF +/- 1uF`, `4Kohm +/- 1%` | Defines the allowed deviation. |
-
-## Specialization
-
-The `->` operator is used to specialize a module instance to a different type:
-
-```atopile
-some_instance -> AnotherModuleType
-```
-
-This is useful for configuring a topology specified earlier.
-
-## Imports
-
-Use the new syntax for importing assets:
-
-```atopile
-from "where.ato" import What, Why, Wow
-```
-Imports are relative to the project root (`ato.yaml` location) or the standard library.
+- **Resistance**: `ohm`, `kohm`, `Mohm`
+- **Capacitance**: `uF`, `nF`, `pF`
+- **Voltage**: `V`, `mV`
+- **Tolerances**: `10kohm +/- 1%`, `3.3V to 3.6V`

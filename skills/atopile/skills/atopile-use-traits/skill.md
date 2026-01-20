@@ -1,40 +1,22 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-use-traits
-description: Applies traits to Atopile modules to extend functionality, such as bridging connections or sharing electric references. Use when the user wants to "use a trait", "bridge a module", or "share ground references".
----
+description: Applies advanced traits like bridging and shared references to extend module functionality. Use when simplifying connections across modules or sharing power rails.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
-# Atopile Trait Application
+# Atopile Traits
 
-Traits are used to extend the functionality of a module.
+Traits are powerful extensions that automate common connection patterns within and across modules.
 
 ## Supported Traits
 
-| Trait | Purpose |
-| :---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0" | :--- |
-| `can_bridge_by_name` | Enables the `~>` operator for bridging connections over a module. |
-| `has_single_electric_reference_shared` | Connects all electric references (grounds) within the module together. |
+- **can_bridge_by_name**: Enables the "sperm operator" (`~>`) for daisy-chaining modules.
+- **has_single_electric_reference_shared**: Automatically connects all internal signal references to a common power rail.
 
-## Usage Example (`can_bridge_by_name`)
+## Progressive Disclosure
 
-```atopile
-module BridgableModule:
-    input = new ElectricLogic
-    output = new ElectricLogic
-    trait can_bridge_by_name<input_name="input", output_name="output">
-```
-
-## Reference
-
-See [reference guide](references/REFERENCE.md)(reference.md) for import pragmas and detailed trait parameters.
+- See [technical reference](references/REFERENCE.md) for trait parameters and experiment flags.
+- See [usage examples](examples/examples.md) for bridging and shared reference patterns.

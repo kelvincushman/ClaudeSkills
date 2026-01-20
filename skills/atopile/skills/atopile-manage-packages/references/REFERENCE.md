@@ -1,21 +1,12 @@
-# Atopile Package Management Reference
+# Atopile Dependency Reference
 
-## Dependency File (`ato.yaml`)
-
-Dependencies are listed in the `ato.yaml` file:
-
+## `ato.yaml` Dependencies
+Dependencies are listed under the `dependencies` key:
 ```yaml
 dependencies:
-  - type: registry
-    identifier: atopile/buttons
-    release: 0.2.2
+  - atopile/rp2040
+  - atopile/generics
 ```
 
-## Development Dependencies
-
-You can install dependencies from Git or a local directory:
-
-*   **Git**: `ato add git://{git-url}`
-*   **Local**: `ato add file://./path/to/package`
-
-**Note**: You cannot publish a package that depends on unpublished packages.
+## Registry
+Atopile uses a public registry for package discovery. You can browse available packages at [packages.atopile.io](https://packages.atopile.io).

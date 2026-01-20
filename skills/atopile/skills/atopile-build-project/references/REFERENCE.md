@@ -1,17 +1,13 @@
-# Atopile Build Process Reference
+# Atopile Build Reference
 
-## Build Steps
+## Build Process Steps
+1.  **Parsing**: Reads `.ato` files and dependencies.
+2.  **Solving**: Resolves all `assert` constraints and calculates component values.
+3.  **Picking**: Selects specific components from the library (e.g., LCSC).
+4.  **Netlisting**: Generates the connectivity map for KiCAD.
+5.  **Layout Sync**: Updates the `.kicad_pcb` file with new components and nets.
 
-When you run `ato build`, the compiler performs the following steps:
-
-1.  **Read `ato.yaml`**: Locates the entry point.
-2.  **Compile Code**: Starts from the entry point.
-3.  **Solve Equations**: Solves systems of constraints (e.g., for resistor values).
-4.  **Pick Components**: Selects components from the parts library that satisfy all constraints.
-5.  **Update PCB File**: Generates or updates the KiCAD layout file (`default.kicad_pcb`).
-6.  **Generate Manufacturing Data**: Creates Gerber files and other manufacturing outputs.
-7.  **Generate Reports**: Creates BOMs and other reports.
-
-## Debugging
-
-Use `ato --debug build` to run a `debugpy` server on port `5678`, allowing you to connect a debugger from VSCode/Cursor.
+## CLI Options
+- `--help`: Show all commands and options.
+- `--target`: Specify a build target defined in `ato.yaml`.
+- `--config`: Path to a custom `ato.yaml`.

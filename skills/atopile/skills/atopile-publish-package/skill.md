@@ -1,31 +1,29 @@
 ---
-license: MIT
-metadata:
-  author: Manus AI
-  version: "1.0"
 name: atopile-publish-package
-description: Guides the user on how to publish their Atopile package to the registry. Use when the user wants to "publish my package", "share my module", or "upload to atopile registry".
----
+description: Publishes Atopile modules to the public registry. Use when sharing reusable circuit blocks, contributing to the community, or managing internal component libraries.
 license: MIT
 metadata:
   author: Manus AI
   version: "1.0"
+---
 
-# Atopile Publishing Packages
+# Atopile Package Publishing
 
-This skill explains how to share your Atopile modules with the community by publishing them to the package registry.
+This skill explains how to share your Atopile modules by publishing them to the public registry.
 
 ## Prerequisites
 
-1.  **Account**: You must have an account on the Atopile registry.
-2.  **Login**: Use `ato login` to authenticate.
-3.  **Clean State**: Ensure your project is in a clean state and all changes are committed.
+1.  **GitHub Account**: Required for authentication via OIDC.
+2.  **Package Metadata**: Must be defined in `ato.yaml`.
+3.  **GitHub Action**: Publishing is handled via the `atopile/publish-package` action.
 
-## Publishing Steps
+## Publishing Workflow
 
-1.  **Check `ato.yaml`**: Ensure your package name, version, and description are correct.
-2.  **Run Publish**: Execute `ato publish`.
+1.  Configure `package` metadata in `ato.yaml`.
+2.  Set up the GitHub Action workflow.
+3.  Create a GitHub Release to trigger the publish.
 
-## Reference
+## Progressive Disclosure
 
-See [reference guide](references/REFERENCE.md)(reference.md) for more details on the publishing process and `ato.yaml` configuration.
+- See [technical reference](references/REFERENCE.md) for `ato.yaml` fields and GitHub Action configuration.
+- See [usage examples](examples/examples.md) for single-package and monorepo patterns.

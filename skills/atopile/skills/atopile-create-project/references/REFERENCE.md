@@ -1,17 +1,13 @@
-# Atopile Project Structure Reference
+# Atopile Project Reference
 
-## Default Project Files
+## `ato.yaml` Overview
+The `ato.yaml` file defines:
+- **Project Name**: The unique name of the project.
+- **Entry Point**: The main `.ato` file and module to build.
+- **Build Targets**: Different configurations (e.g., PCBA, Test Jig).
+- **Dependencies**: External packages required.
 
-| File/Directory | Purpose |
-| :--- | :--- |
-| `LICENSE` | Default MIT license. |
-| `README.md` | Project description. |
-| `ato.yaml` | Atopile's configuration file (defines entry point, dependencies, etc.). |
-| `build/` | Build artifacts and cache (should be ignored by Git). |
-| `layouts/` | KiCAD layout files. |
-| `layouts/default/default.kicad_pcb` | The main layout file updated by `ato build`. |
-| `*.ato` | Your Atopile source files (e.g., `demo.ato`). |
-
-## `ato.yaml` Entry Point
-
-The `ato.yaml` file specifies the entry point for the build process, typically a module named `App` in your main `.ato` file.
+## Directory Layout
+- `src/main.ato`: Default entry point.
+- `.ato/`: Internal cache and dependencies (ignore in Git).
+- `build/`: Output artifacts (ignore in Git).
